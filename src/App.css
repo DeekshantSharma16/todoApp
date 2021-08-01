@@ -73,11 +73,13 @@
         background-color: transparent;
         font-size: 28px;
         border-radius: 50%;
+
 }
 
 .button-complete{
         color: #ff6c6c;
         margin-right: 10px;
+
 }
 .button-edit{
         color: #e2d029;
@@ -85,6 +87,7 @@
 }
 .button-delete{
         color: lightseagreen;
+
 }
 .complete{
         text-decoration-style: solid;
@@ -120,4 +123,7 @@ button:focus{
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+.alignright{
+        margin-left: 8%;
 }

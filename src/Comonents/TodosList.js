@@ -28,7 +28,7 @@ const TodosList = ({ todos, setTodos, setEdit }) => {
             className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(event) => event.preventDefault()}
           />
-          <div>
+          <div className="alignright">
             <button
               className="button-complete task-button"
               onClick={() => handleComplete(todo)}
