@@ -1,222 +1,123 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
-
-html {
-  font-size: 62.5%;
+.container{
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content:  center;
+        align-items: center;
 }
 
-.main-div {
-  min-height: 100vh;
-  background: #060822;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
+.app-wrapper{
+        background-color: black;
+        min-width: 450px;
+        min-height: 650px;
+        padding: 30px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 3px 6px 40px #000;
+        margin-bottom:10px;
+}
+.header h1{
+        color:#fff;
+        text-align: center;
+        margin:30px 0;
 }
 
-.child-div {
-  text-align: center;
-  margin-top: 12rem;
+.task-input{
+        outline: none;
+        width: 260px;
+        padding: 15px;
+        margin-right: 25px;
+        font-size: 20px;
+        color: #ccc;
+        background-color: #000000;
+        border: 1px solid #c89666;
+        border-radius: 10px;
+}
+.button-add{
+        width:100px;
+        padding: 15px 15px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 0;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+        cursor: pointer;
+}
+.button-add:hover{
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+.list-item{
+        display:flex;
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        max-height: 50px;
 }
 
-.child-div figure img {
-  width: 10rem;
-  height: 8rem;
+.button-complete,
+.button-delete,
+.button-edit{
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 28px;
+        border-radius: 50%;
 }
 
-.child-div figure figcaption {
-  color: #fff;
-  font-size: 2.2rem;
-  padding-top: 2rem;
-  text-transform: capitalize;
+.button-complete{
+        color: #ff6c6c;
+        margin-right: 10px;
+}
+.button-edit{
+        color: #e2d029;
+        margin-right: 10px;
+}
+.button-delete{
+        color: lightseagreen;
+}
+.complete{
+        text-decoration-style: solid;
+        text-decoration-line: line-through;
+        text-decoration-color: #ff6c6c;
+        opacity: 0.6;
 }
 
-input {
-  /* display: block; */
-  min-width: 40rem;
-  height: 3.4rem;
-  padding: 2rem 1.2rem;
-  font-size: 1.8rem;
-  line-height: 1.42857143;
-  margin-top: 2rem;
-  color: rgb(58, 57, 57);
-  background-color: #fff;
-  background-image: none;
-  border: 0.1rem solid #ccc;
-  border-radius: 0.4rem;
-  -webkit-box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
-  box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+.list{
+        width: 220px;
+        background-color: black;
+        border: none;
+        color: #ccc;
+        font-size: 20px;
+        padding-left: 10px;
+        margin-right: 15px;
 }
-
-input,
 input:focus,
-input:active,
-input:active:focus {
-  border: none;
-  padding: 2.3rem 1.5rem;
-  outline: none;
-}
-input {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-input:focus {
-  -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+button:focus{
+        outline: none;
 }
 
-.todo-btn {
-  width: 5rem;
-  display: flex;
-  justify-content: space-around;
-}
-
-.fa {
-  margin-left: -2.5rem;
-  cursor: pointer;
-  pointer-events: auto;
-  z-index: 10;
-  background-color: #fff;
-  background-image: none;
-  color: #666;
-  -webkit-transition: color 0.15s linear;
-  transition: color 0.15s linear;
-  font-size: 2rem;
-}
-.fa:hover {
-  color: rgb(47, 214, 122);
-}
-
-.fa-plus:before {
-  content: "\f067";
-  font-size: 1.5rem;
-}
-
-.showItems {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.eachItem {
-  background: #fff;
-  padding: 1.2rem 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.7rem;
-  margin-left: 1rem;
-  min-width: 40rem;
-  word-break: break-word;
-  background: rgb(85, 41, 220);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.eachItem:hover {
-  background: rgb(249, 249, 252);
-  color: rgb(85, 41, 220);
-}
-
-.showItems .eachItem h3 {
-  padding-left: 1rem;
-  font-size: 1.6rem;
-  color: #fff;
-}
-
-.fa-trash-alt,
-.fa-edit {
-  /* margin-left: -2.5rem; */
-  cursor: pointer;
-  pointer-events: auto;
-  z-index: 10;
-  color: rgb(251, 251, 251);
-  -webkit-transition: color 0.15s linear;
-  transition: color 0.15s linear;
-  font-size: 2rem;
-}
-
-.addItems .fa-edit {
-  color: rgb(47, 214, 122);
-}
-
-.fa-edit {
-  margin-left: -3.5rem;
-}
-
-.eachItem:hover .fa-trash-alt {
-  color: rgb(214, 47, 61);
-}
-
-.eachItem:hover .fa-edit {
-  color: rgb(100, 214, 47);
-}
-
-.eachItem:hover h3 {
-  color: rgb(85, 41, 220);
-}
-
-.btn {
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 45px;
-  max-width: 160px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
-}
-.btn:hover {
-  text-decoration: none;
-}
-
-.effect04 {
-  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
-  display: var(--uismLinkDisplay);
-  color: #000;
-  outline: solid 2px #000;
-  position: relative;
-  transition-duration: 0.4s;
-  overflow: hidden;
-}
-
-.effect04::before,
-.effect04 span {
-  margin: 0 auto;
-  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  transition-duration: 0.4s;
-}
-
-.effect04:hover {
-  background-color: rgb(85, 41, 220);
-}
-
-.effect04:hover span {
-  -webkit-transform: translateY(-400%) scale(-0.1, 20);
-  transform: translateY(-400%) scale(-0.1, 20);
-}
-
-.effect04::before {
-  content: attr(data-sm-link-text);
-  color: #fff;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  -webkit-transform: translateY(500%) scale(-0.1, 20);
-  transform: translateY(500%) scale(-0.1, 20);
-}
-
-.effect04:hover::before {
-  letter-spacing: 0.05em;
-  -webkit-transform: translateY(0) scale(1, 1);
-  transform: translateY(0) scale(1, 1);
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
